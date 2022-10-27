@@ -102,7 +102,7 @@ int main() {
     }
 
 
-    int sw_num = 0;
+//    int sw_num = 0;
     for (int i = 0; i < input.length(); i++) {
         if (input.substr(i, 6) == "switch") {
             get_switch(i, sw_num++);
