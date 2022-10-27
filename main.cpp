@@ -71,7 +71,7 @@ int main() {
     int level;
     cin >> level;
 
-    double st = clock();
+//    double st = clock();
     ifstream ifs;
     ifs.open(path, ios::in);
     if (!ifs.is_open()) {
@@ -133,7 +133,7 @@ int main() {
     if (level >= 4) {
         cout << "if-elseif-else num: " << cnt_else_if << endl;
     }
-    double end = clock();
-    cout << "time cost: " << end - st << endl;
+//    double end = clock();
+//    cout << "time cost: " << end - st << endl;
     return 0;
 }
