@@ -1,0 +1,3 @@
+/Users/doubleq/CLionProjects/code_new/cmake-build-debug/CMakeFiles/code_new.dir
+/Users/doubleq/CLionProjects/code_new/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/doubleq/CLionProjects/code_new/cmake-build-debug/CMakeFiles/rebuild_cache.dir
