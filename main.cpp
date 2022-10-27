@@ -6,62 +6,62 @@ string input;
 vector<int> sw;
 int cnt_else_if = 0, cnt_else = 0;
 
-void get_switch(int& st, int id) {
-    sw.emplace_back(0);
-    int cnt = 0;
-    for (int i = st; i < input.length(); i++) {
-        if (input[i] == '{') {
-            cnt++;
-        } else if (input[i] == '}') {
-            cnt--;
-            if (!cnt) {
-                st = i;
-                return;
-            }
-        }
-
-        if (input.substr(i, 4) == "case") {
-            sw[id]++;
-        }
-    }
-}
-
-void get_if(int& st) {
-    bool is_else_if = 0;
-    bool flag = 0;
-    int cnt = 0;
-    for (int i = st + 2; i < input.length(); i++) {
-        if (flag == 1) {
-            if (input[i] == '{') {
-                cnt++;
-            }
-            if (input[i] == '}') {
-                cnt--;
-                if (!cnt) {
-                    st = i + 1;
-                    return;
-                }
-            }
-        }
-
-        if (input.substr(i, 2) == "if") {
-            get_if(i);
-        }
-        if (input.substr(i, 7) == "else if") {
-            if (!is_else_if) {
-                is_else_if = 1;
-                cnt_else_if++;
-            }
-            i += 7;
-        } else if (input.substr(i, 4) == "else") {
-            if (!is_else_if) {
-                cnt_else++;
-            }
-            flag = 1;
-            i += 4;
-        }
-    }
-}
+//void get_switch(int& st, int id) {
+//    sw.emplace_back(0);
+//    int cnt = 0;
+//    for (int i = st; i < input.length(); i++) {
+//        if (input[i] == '{') {
+//            cnt++;
+//        } else if (input[i] == '}') {
+//            cnt--;
+//            if (!cnt) {
+//                st = i;
+//                return;
+//            }
+//        }
+//
+//        if (input.substr(i, 4) == "case") {
+//            sw[id]++;
+//        }
+//    }
+//}
+//
+//void get_if(int& st) {
+//    bool is_else_if = 0;
+//    bool flag = 0;
+//    int cnt = 0;
+//    for (int i = st + 2; i < input.length(); i++) {
+//        if (flag == 1) {
+//            if (input[i] == '{') {
+//                cnt++;
+//            }
+//            if (input[i] == '}') {
+//                cnt--;
+//                if (!cnt) {
+//                    st = i + 1;
+//                    return;
+//                }
+//            }
+//        }
+//
+//        if (input.substr(i, 2) == "if") {
+//            get_if(i);
+//        }
+//        if (input.substr(i, 7) == "else if") {
+//            if (!is_else_if) {
+//                is_else_if = 1;
+//                cnt_else_if++;
+//            }
+//            i += 7;
+//        } else if (input.substr(i, 4) == "else") {
+//            if (!is_else_if) {
+//                cnt_else++;
+//            }
+//            flag = 1;
+//            i += 4;
+//        }
+//    }
+//}
 
 int main() {
     string path;
@@ -135,6 +135,5 @@ int main() {
     }
     double end = clock();
     cout << "time cost: " << end - st << endl;
-
     return 0;
 }
